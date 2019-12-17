@@ -20,7 +20,7 @@ class PigLatinizer
   def pigL(word)
     letters = word.downcase.split(',')
     if letters[0] == a | == e | == i | == o| == u
-    
+
 
 
 
