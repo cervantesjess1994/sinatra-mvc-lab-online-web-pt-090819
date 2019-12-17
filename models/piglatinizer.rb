@@ -5,7 +5,7 @@ class PigLatinizer
     a = string.split(" ")
     b = a.map {|word| piglatinize_word(word)}
     b.join(" ")
-end
+  end
 
   def piglatinize(word)
     first_letter = word[0].downcase
