@@ -14,4 +14,12 @@ end
     else
         # piglatinize word that starts with a consonant
     end
+
+  def piglatinize_word(word)
+    first_letter = word[0].downcase
+    if ["a", "e", "i", "o", "u"].include?(first_letter)
+        "#{word}way"
+    else
+        # piglatinize word that starts with a consonant
+    end
 end
