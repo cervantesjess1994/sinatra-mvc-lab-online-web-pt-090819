@@ -17,6 +17,15 @@ class PigLatinizer
     letters.join
   end
 
+  def pigL(word)
+    letters = word.downcase.split(',')
+    if letters[0] == a | == e | == i | == o| == u
+    
+
+
+
+
+
   def to_pig_latin(sentence)
     word = sentence.split
     word.each do |word|
