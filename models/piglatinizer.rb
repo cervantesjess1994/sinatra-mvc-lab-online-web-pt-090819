@@ -1,5 +1,9 @@
 class PigLatinizer
 
+  def vowel?(letter)
+    letter == "o" || letter == "e" || letter == "a" || letter == "i" || letter == "u"
+  end
+
   def piglatinize(word)
     return word if %w[and an in].include?(word)
     letters = word.split("")
@@ -18,10 +22,4 @@ class PigLatinizer
     words.map! {|word| piglatinize(word)}
     words.join(" ")
   end
-
-  def vowel?(letter)
-    letter.downcase
-    letter == "o" || letter == "e" || letter == "a" || letter == "i" || letter == "u"
-  end
-
 end
