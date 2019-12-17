@@ -7,19 +7,19 @@ class PigLatinizer
     b.join(" ")
   end
 
-  def piglatinize(word)
-    first_letter = word[0].downcase
-    if first_letter == "a" || first_letter == "e" || first_letter == "i" || first_letter == "o" || first_letter == "u"
-        # piglatinize word that starts with a vowel
-    else
-        # piglatinize word that starts with a consonant
-    end
-
   def piglatinize_word(word)
     first_letter = word[0].downcase
+    
     if ["a", "e", "i", "o", "u"].include?(first_letter)
         "#{word}way"
     else
-        # piglatinize word that starts with a consonant
+      consonants = []
+      consonants << word[0]
+        if ["a", "e", "i", "o", "u"].include?(word[1]) == false
+          consonants << word[1]
+          if ["a", "e", "i", "o", "u"].include?(word[2]) == false
+            consonants << word[2]
+          end
+        end
+      "#{word[consonants.length..-1] + consonants.join + "ay"}"
     end
-end
