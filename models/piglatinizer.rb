@@ -1,12 +1,17 @@
 class PigLatinizer
   attr_accessor :string
 
-  def to_pig_latin(string)
-    string = string.split(" ")
-    string_array = string.collect do |word|
-      if word.length == 1
-        word.join("way")
-      end
+  def to_piglatinize_string(string)
+    a = string.split(" ")
+    b = a.map {|word| piglatinize_word(word)}
+    b.join(" ")
+end
+
+  def piglatinize(word)
+    first_letter = word[0].downcase
+    if first_letter == "a" || first_letter == "e" || first_letter == "i" || first_letter == "o" || first_letter == "u"
+        # piglatinize word that starts with a vowel
+    else
+        # piglatinize word that starts with a consonant
     end
-  end
 end
