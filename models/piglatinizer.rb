@@ -1,36 +1,17 @@
 class PigLatinizer
+  attr_accessor :string
 
-  def vowel?(letter)
-    letter == "o" || letter == "e" || letter == "a" || letter == "i" || letter == "u"
-  end
-
-  def piglatinize(word)
-    return word if %w[and an in].include?(word)
-    letters = word.split("")
-    letters.keep_if {|letter| letter != "."}
-    if letters.size > 1
-      until vowel?(letters[0])
-        letters << letters.shift
+  def to_pig_latin(string)
+    string = string.split(" ")
+    string_array = string.collect do |word|
+      if word.length == 1
+        word.join("way")
       end
-      letters  << "ay"
-    end
-    letters.join
-  end
-
-  def pigL(word)
-    letters = word.downcase.split(',')
-    if letters[0] == a | == e | == i | == o| == u
-      word.join("ay,")
-
-
-
-
-
-
-  def to_pig_latin(sentence)
-    word = sentence.split
-    word.each do |word|
-      word.piglatinize
     end
   end
 end
+
+
+
+
+
